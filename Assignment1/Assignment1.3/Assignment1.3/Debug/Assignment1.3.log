@@ -1,0 +1,2 @@
+﻿  compile_error.cpp
+c:\users\nishchal's pc\source\repos\compile_error.cpp(14): error C2146: syntax error: missing ';' before identifier 'cin'
