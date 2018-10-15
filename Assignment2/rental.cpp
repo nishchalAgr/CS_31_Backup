@@ -5,8 +5,8 @@ using namespace std;
 
 int main() {
 
-	int start = 0;
-	int end = 0;
+	double start = 0;
+	double end = 0;
 	int days = 0;
 	int month = 0;
 	int check = 0; //if check is equal to one, then the program will end
@@ -15,7 +15,7 @@ int main() {
 	string luxury;
 
 	double base = 0.0; //based on luxury, per day charge
-	double perMile = 0.0; //0 - 100 = .27/mile ; 100 - 400 = .21/mile or .27/mile(dec - march) ; 400+ - 0.19/mile 
+	//0 - 100 = .27/mile ; 100 - 400 = .21/mile or .27/mile(dec - march) ; 400+ - 0.19/mile 
 	double ans = 0.0;
 
 	cout << "odometer at start: ";
@@ -25,7 +25,7 @@ int main() {
 	if (start < 0) {
 
 		cout << "---" << endl;
-		cout << "Starting odometer must be nonnegative" << endl;
+		cout << "Starting odometer must be nonnegative." << endl;
 		return 0;
 
 	}
@@ -36,7 +36,7 @@ int main() {
 	if (end - start < 0) {
 
 		cout << "---" << endl;
-		cout << "The final odometer reading must be at least as large as the starting reading" << endl;
+		cout << "The final odometer reading must be at least as large as the starting reading." << endl;
 		return 0;
 
 	}
@@ -47,7 +47,7 @@ int main() {
 	if (days < 0) {
 
 		cout << "---" << endl;
-		cout << "The number of rental days must be larger than zero" << endl;
+		cout << "The number of rental days must be larger than zero." << endl;
 		return 0;
 
 	}
@@ -60,7 +60,7 @@ int main() {
 	if (name.compare("") == 0) {
 
 		cout << "---" << endl;
-		cout << "You must enter a customer name" << endl;
+		cout << "You must enter a customer name." << endl;
 		return 0;
 
 	}
@@ -82,12 +82,12 @@ int main() {
 	if (month < 1 || month > 12) {
 
 		cout << "---" << endl;
-		cout << "The month number must be in the range 1 through 12" << endl;
+		cout << "The month number must be in the range 1 through 12." << endl;
 		return 0;
 
 	}
 
-	int miles = end - start;
+	double miles = end - start;
 
 	if (luxury.compare("y") == 0) {
 
@@ -103,7 +103,7 @@ int main() {
 	base = base * days;
 	ans += base;
 
-	if (miles < 100) {
+	if (miles <= 100) {
 
 		ans += 0.27 * miles; // for if total miles is less than 100
 
@@ -144,7 +144,10 @@ int main() {
 	}
 
 	cout << "---" << endl;
+	cout << std::fixed;
+	cout.precision(2);
 	cout << "The rental charge for " << name << " is $" << ans << endl;
 	cin >> base;
+
 
 }
