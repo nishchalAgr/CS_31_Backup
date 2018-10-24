@@ -18,7 +18,7 @@ int main() {
 	//0 - 100 = .27/mile ; 100 - 400 = .21/mile or .27/mile(dec - march) ; 400+ - 0.19/mile 
 	double ans = 0.0;
 
-	cout << "odometer at start: ";
+	cout << "Odometer at start: ";
 	cin >> start;
 
 
@@ -30,7 +30,7 @@ int main() {
 
 	}
 
-	cout << "odometer at end: ";
+	cout << "Odometer at end: ";
 	cin >> end;
 
 	if (end - start < 0) {
@@ -147,7 +147,5 @@ int main() {
 	cout << std::fixed;
 	cout.precision(2);
 	cout << "The rental charge for " << name << " is $" << ans << endl;
-	cin >> base;
-
 
 }
